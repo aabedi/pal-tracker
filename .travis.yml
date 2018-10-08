@@ -12,7 +12,7 @@ jobs:
     - stage: build and publish
       language: java
       jdk: oraclejdk8
-      install: skip
+      install: travis_wait mvn install
       script: ./gradlew clean build
       before_deploy:
         - git config --local user.name "Travis CI"
